@@ -1,0 +1,62 @@
+<%= form_for(@user,  html: {class: "form-horizontal"}) do |f| %>
+  <% if @user.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @user.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+      <%= f.label  :name, "名前：", class: 'col-md-2' %>
+    <div class="col-md-5">
+      <%= f.text_field :name, class: 'form-control', placeholder: "名前" %>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+  <div class="form-group">
+      <%= f.label  :email, "E-mail：", class: 'col-md-2' %>
+    <div class="col-md-5">
+      <%= f.text_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+  <div class="form-group">
+      <%= f.label  :password, "パスワード：", class: 'col-md-2' %>
+    <div class="col-md-5">
+      <%= f.password_field :password, class: 'form-control', placeholder: "パスワード" %>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+  <div class="form-group">
+      <%= f.label  :password_confirmation, "パスワード（確認用）：", class: 'col-md-2' %>
+    <div class="col-md-5">
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワード（確認用）" %>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+  <div class="form-group">
+      <%= f.label  :location, "場所：", class: 'col-md-2' %>
+    <div class="col-md-2">
+      <%= f.text_field :location, class: 'form-control', placeholder: "場所" %> 
+    </div>
+    <div class="col-md-8"></div>
+  </div>
+  <div class="form-group">
+      <%= f.label  :profile, "プロフィール：", class: 'col-md-2'  %>
+    <div class="col-md-10">
+      <%= f.text_area :profile, class: 'form-control', placeholder: "プロフィールを書いてください", rows: 6 %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+      <%= f.submit class: "btn btn-sm btn-primary" %>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+<% end %>

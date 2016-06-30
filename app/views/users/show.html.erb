@@ -2,3 +2,19 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+<div class='row'>
+  <div class="col-md-2 col-md-offset-4">
+      <%= label  :location, "場所：" %>
+  </div>
+  <div class="col-md-5">
+      <%= label  :location, @user.location %>
+  </div>
+</div>
+<div class='row'>
+  <div class="col-md-2 col-md-offset-4">
+      <%= label  :profile, "プロフィール：" %>
+  </div>
+  <div class="col-md-5">
+      <%= label  :profile, @user.profile %>
+  </div>
+</div>
